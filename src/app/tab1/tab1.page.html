@@ -1,10 +1,10 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -12,6 +12,114 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="3" size-sm="3" >
+        <ion-list>
+          <ion-item lines="full">
+            <ion-icon slot="start" name="moon"></ion-icon>
+            <ion-label>
+  
+            </ion-label>
+            <ion-toggle id="themeToggle" slot="end"></ion-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+  
+    </ion-row>
+  </ion-grid>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="3" size-sm="3" >
+          <ion-card>
+            <img alt="arabika"  src="../../assets/images/arabika.jpg" />
+            <ion-card-header>
+              <ion-card-title>Kopi Arabika</ion-card-title>
+              <ion-card-subtitle>Rp. 15.000</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              Kopi Arabika Enak
+            </ion-card-content>
+            <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
+          </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+        </ion-col>
+        <ion-col size="3"size-sm="3">
+          <ion-card>
+            <img alt="kintamani"   src="../../assets/images/kintamani.jpg" />
+            <ion-card-header>
+              <ion-card-title>Kopi Kintamani</ion-card-title>
+              <ion-card-subtitle>Rp. 20.000</ion-card-subtitle>
+            </ion-card-header> 
+            <ion-card-content>
+              Kopi Kintamani Khas Bali
+            </ion-card-content>
+            <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
+          </ion-card>
+          
+        </ion-col>
+        <ion-col size="3"size-sm="3">
+          <ion-card>
+            <img alt="kopitoraja" src="../../assets/images/kopitoraja.jpg" />
+            <ion-card-header>
+              <ion-card-title size-sm="3">Kopi Toraja</ion-card-title>
+              <ion-card-subtitle>Rp. 40.000</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              Kopi Toraja Khas
+            </ion-card-content>
+            <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
+          </ion-card>
+        </ion-col>
+        <ion-col size="3" size-sm="3">
+          <ion-card>
+            <img alt="Silhouette of mountains" src="../../assets/images/KopiGayo.jpg" />
+            <ion-card-header>
+              <ion-card-title>Kopi Gayo Aceh</ion-card-title>
+              <ion-card-subtitle>Rp. 50.000</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              Kopi Gayo Khas
+            </ion-card-content>
+                <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+<!-- <ion-grid>
+  <ion-row>
+    <ion-col col-4>
+        <ion-card>
+          <img alt="Silhouette of mountains" src="../../assets/images/KopiGayo.jpg" />
+          <ion-card-header>
+            <ion-card-title>Kopi Gayo Aceh</ion-card-title>
+            <ion-card-subtitle>Rp. 50.000</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Kopi Gayo Khas
+          </ion-card-content>
+          <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
+        </ion-card>
+    </ion-col>
+    <ion-col col-2>
+        <ion-card>
+          <img alt="kopitoraja" src="../../assets/images/kopitoraja.jpg" />
+          <ion-card-header>
+            <ion-card-title size-sm="3">Kopi Toraja</ion-card-title>
+            <ion-card-subtitle>Rp. 40.000</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Kopi Toraja Khas
+          </ion-card-content>
+          <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
+        </ion-card>
+    </ion-col>
+    <ion-col col-2>
+      3 of 4
+    </ion-col>
+    <ion-col col-4>
+      4 of 4
+    </ion-col>
+  </ion-row>
+</ion-grid> -->
