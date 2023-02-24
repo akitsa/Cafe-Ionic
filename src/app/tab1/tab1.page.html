@@ -1,125 +1,111 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-grid fixed>
+<ion-content>
+  <!-- Header -->
+  <ion-card id="header" class="ion-no-margin">
+    <ion-card-header>
+      <ion-item lines="none">
+        <ion-avatar slot="end">
+          <img
+            alt="Silhouette of a person's head"
+            src="https://ionicframework.com/docs/img/demos/avatar.svg"
+          />
+        </ion-avatar>
+        <ion-label>
+          {{user.name}}
+          <p>{{user.level}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <!-- End Header -->
+  <ion-searchbar
+    id="search"
+    class="ion-no-padding"
+    show-cancel-button="focus"
+    placeholder="Show on Focus"
+  ></ion-searchbar>
+  <!-- Category -->
+  <ion-card id="category" class="ion-no-margin">
     <ion-row>
-      <ion-col size="3" size-sm="3" >
-        <ion-list>
-          <ion-item lines="full">
-            <ion-icon slot="start" name="moon"></ion-icon>
-            <ion-label>
-  
-            </ion-label>
-            <ion-toggle id="themeToggle" slot="end"></ion-toggle>
-          </ion-item>
-        </ion-list>
+      <ion-col size="3">
+        <div class="cat-item">
+          <img src="assets/images/food.png" alt="" />
+          <p>MAKANAN</p>
+        </div>
       </ion-col>
-  
+      <ion-col size="3">
+        <div class="cat-item">
+          <img src="assets/images/drink.png" alt="" />
+          <p>MINUMAN</p>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="cat-item">
+          <img src="assets/images/snack.png" alt="" />
+          <p>SNACK</p>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="cat-item">
+          <img src="assets/images/fruit.png" alt="" />
+          <p>FRUITS</p>
+        </div>
+      </ion-col>
     </ion-row>
-  </ion-grid>
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="3" size-sm="3" >
-          <ion-card>
-            <img alt="arabika"  src="../../assets/images/arabika.jpg" />
-            <ion-card-header>
-              <ion-card-title>Kopi Arabika</ion-card-title>
-              <ion-card-subtitle>Rp. 15.000</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Kopi Arabika Enak
-            </ion-card-content>
-            <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
-          </ion-card>
+  </ion-card>
+  <!-- End Category -->
+<!--  &lt;!&ndash; Skeleton Animasi &ndash;&gt;-->
+<!--  <ion-list *ngIf="!menus">-->
+<!--    <ion-list-header>-->
+<!--      <ion-label>MENU</ion-label>-->
+<!--      <ion-button>See All</ion-button>-->
+<!--    </ion-list-header>-->
+<!--    <ion-item lines="none" *ngFor="let sk of [1,2,3,4,5]">-->
+<!--      <ion-thumbnail slot="start">-->
+<!--        <ion-skeleton-text [animated]="true"></ion-skeleton-text>-->
+<!--      </ion-thumbnail>-->
+<!--      <ion-label>-->
+<!--        <p>-->
+<!--          <ion-skeleton-text-->
+<!--            [animated]="true"-->
+<!--            style="width: 40%"-->
+<!--          ></ion-skeleton-text>-->
+<!--        </p>-->
+<!--        <h2>-->
+<!--          <ion-skeleton-text-->
+<!--            [animated]="true"-->
+<!--            style="width: 80%"-->
+<!--          ></ion-skeleton-text>-->
+<!--        </h2>-->
+<!--        <p class="price">-->
+<!--          <ion-skeleton-text-->
+<!--            [animated]="true"-->
+<!--            style="width: 60%"-->
+<!--          ></ion-skeleton-text>-->
+<!--        </p>-->
+<!--      </ion-label>-->
+<!--    </ion-item>-->
+<!--  </ion-list>-->
+<!--  &lt;!&ndash; End Skeleton Animasi &ndash;&gt;-->
 
-        </ion-col>
-        <ion-col size="3"size-sm="3">
-          <ion-card>
-            <img alt="kintamani"   src="../../assets/images/kintamani.jpg" />
-            <ion-card-header>
-              <ion-card-title>Kopi Kintamani</ion-card-title>
-              <ion-card-subtitle>Rp. 20.000</ion-card-subtitle>
-            </ion-card-header> 
-            <ion-card-content>
-              Kopi Kintamani Khas Bali
-            </ion-card-content>
-            <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
-          </ion-card>
-          
-        </ion-col>
-        <ion-col size="3"size-sm="3">
-          <ion-card>
-            <img alt="kopitoraja" src="../../assets/images/kopitoraja.jpg" />
-            <ion-card-header>
-              <ion-card-title size-sm="3">Kopi Toraja</ion-card-title>
-              <ion-card-subtitle>Rp. 40.000</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Kopi Toraja Khas
-            </ion-card-content>
-            <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
-          </ion-card>
-        </ion-col>
-        <ion-col size="3" size-sm="3">
-          <ion-card>
-            <img alt="Silhouette of mountains" src="../../assets/images/KopiGayo.jpg" />
-            <ion-card-header>
-              <ion-card-title>Kopi Gayo Aceh</ion-card-title>
-              <ion-card-subtitle>Rp. 50.000</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Kopi Gayo Khas
-            </ion-card-content>
-                <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    
-<!-- <ion-grid>
-  <ion-row>
-    <ion-col col-4>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="../../assets/images/KopiGayo.jpg" />
-          <ion-card-header>
-            <ion-card-title>Kopi Gayo Aceh</ion-card-title>
-            <ion-card-subtitle>Rp. 50.000</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Kopi Gayo Khas
-          </ion-card-content>
-          <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
-        </ion-card>
-    </ion-col>
-    <ion-col col-2>
-        <ion-card>
-          <img alt="kopitoraja" src="../../assets/images/kopitoraja.jpg" />
-          <ion-card-header>
-            <ion-card-title size-sm="3">Kopi Toraja</ion-card-title>
-            <ion-card-subtitle>Rp. 40.000</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            Kopi Toraja Khas
-          </ion-card-content>
-          <ion-button fill="clear"><ion-icon name="cart-outline"></ion-icon></ion-button>
-        </ion-card>
-    </ion-col>
-    <ion-col col-2>
-      3 of 4
-    </ion-col>
-    <ion-col col-4>
-      4 of 4
-    </ion-col>
-  </ion-row>
-</ion-grid> -->
+  <!-- List Menu  -->
+  <ion-list *ngIf="menus">
+    <ion-list-header>
+      <ion-label>MENU</ion-label>
+      <ion-button>See All</ion-button>
+    </ion-list-header>
+    <ion-item class="card" lines="none" *ngFor="let mn of menus">
+      <ion-thumbnail slot="start">
+        <img src="{{ mn.foto }}" alt="makanan"/>
+      </ion-thumbnail>
+      <ion-label>
+        <div class="card-content">
+        <p class="title">{{ mn.cat_nm }}</p>
+        <h2 class="title">{{ mn.mn_nm }}</h2>
+        <p class="price">Rp {{ mn.mn_harga }} ,-</p>
+        </div>
+        
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- End Menu Favorit -->
+</ion-content>

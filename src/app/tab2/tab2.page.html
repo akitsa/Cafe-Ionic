@@ -1,17 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Menu-List
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-searchbar id="search" class="ion-no-padding" show-cancel-button="focus"  placeholder="search menu" [(ngModel)]="search" ></ion-searchbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- category -->
+  <ion-segment [scrollable]>
+    <ion-segment-button value="all" (click)="getMenu">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button *ngFor="let cat of categories" value="{{ cat.id }}"(click)="getMenu(cat.id)" >
+      <ion-label>{{ cat.cat_nm }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <!-- end category -->
+  
+   <!-- Skeleton Animasi -->
+   <ion-list *ngIf="!menus">
+    <ion-list-header>
+      <ion-label>MENU</ion-label>
+      <ion-button>See All</ion-button>
+    </ion-list-header>
+    <ion-item lines="none" *ngFor="let sk of [1,2,3,4,5]">
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <p><ion-skeleton-text [animated]="true" style="width: 40%;"></ion-skeleton-text></p>
+        <h2><ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text></h2>
+        <p class="price"><ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- End Skeleton Animasi -->
+       <!-- List Menu  -->
+       <ion-list *ngIf="menus">
+        <ion-list-header>
+          <ion-label>MENU</ion-label>
+          <ion-button>See All</ion-button>
+        </ion-list-header>
+        <ion-item lines="none" *ngFor="let mn of menus | filter:search" (click)="goDetailMenu(mn)">
+          <ion-thumbnail slot="start">
+            <img src="{{ mn.foto }}" alt="makanan"/>
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{ mn.cat_nm }}</p>
+            <h2>{{ mn.mn_nm }}</h2>
+    
+            <p class="price">Rp {{ mn.mn_harga }} ,-</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+  <!-- End Menu Favorit -->
+
+
 </ion-content>

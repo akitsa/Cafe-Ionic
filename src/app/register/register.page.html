@@ -1,0 +1,23 @@
+
+
+<ion-content>
+  <div id="reg">
+    <div class="logo">
+      <img src="#" alt="">
+    </div>
+    <div class="form">
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="reg.name" type="text" placeholder="name"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="reg.email" type="text" placeholder="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="reg.password" type="password" placeholder="password"></ion-input>
+      </ion-item>
+      <ion-button (click)="goRegister()" expand="block" color="warning" shape="round">
+        Sign Up
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
