@@ -1,111 +1,121 @@
 <ion-content>
-  <!-- Header -->
-  <ion-card id="header" class="ion-no-margin">
-    <ion-card-header>
-      <ion-item lines="none">
-        <ion-avatar slot="end">
-          <img
-            alt="Silhouette of a person's head"
-            src="https://ionicframework.com/docs/img/demos/avatar.svg"
-          />
-        </ion-avatar>
-        <ion-label>
-          {{user.name}}
-          <p>{{user.level}}</p>
-        </ion-label>
-      </ion-item>
-    </ion-card-header>
-  </ion-card>
-  <!-- End Header -->
-  <ion-searchbar
-    id="search"
-    class="ion-no-padding"
-    show-cancel-button="focus"
-    placeholder="Show on Focus"
-  ></ion-searchbar>
-  <!-- Category -->
+  <div class="header">
+    <h1>Menu</h1>
+    <div class="avatar">
+      <ion-img src="assets\img\photo.jpeg"> </ion-img>
+    </div>
+  </div>
+  <ion-searchbar id="search" class="ion-no-padding" show-cancel-button="focus"
+    placeholder="Show on Focus"></ion-searchbar>
+
+  <ion-slides mode="md" pager="md">
+    <ion-slide>
+      <img src="../../assets/img/banner1.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/img/banner2.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/img/banner3.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/img/banner4.png" alt="">
+    </ion-slide>
+  </ion-slides>
+  <!-- category -->
   <ion-card id="category" class="ion-no-margin">
     <ion-row>
       <ion-col size="3">
         <div class="cat-item">
-          <img src="assets/images/food.png" alt="" />
+          <img src="assets/img/food.png" alt="" />
           <p>MAKANAN</p>
         </div>
       </ion-col>
       <ion-col size="3">
         <div class="cat-item">
-          <img src="assets/images/drink.png" alt="" />
+          <img src="assets/img/drink.png" alt="" />
           <p>MINUMAN</p>
         </div>
       </ion-col>
       <ion-col size="3">
         <div class="cat-item">
-          <img src="assets/images/snack.png" alt="" />
+          <img src="assets/img/snack.png" alt="" />
           <p>SNACK</p>
         </div>
       </ion-col>
       <ion-col size="3">
         <div class="cat-item">
-          <img src="assets/images/fruit.png" alt="" />
+          <img src="assets/img/fruit.png" alt="" />
           <p>FRUITS</p>
         </div>
       </ion-col>
     </ion-row>
   </ion-card>
+  <!-- end categori -->
+
+  <!-- menu -->
   <!-- End Category -->
-<!--  &lt;!&ndash; Skeleton Animasi &ndash;&gt;-->
-<!--  <ion-list *ngIf="!menus">-->
-<!--    <ion-list-header>-->
-<!--      <ion-label>MENU</ion-label>-->
-<!--      <ion-button>See All</ion-button>-->
-<!--    </ion-list-header>-->
-<!--    <ion-item lines="none" *ngFor="let sk of [1,2,3,4,5]">-->
-<!--      <ion-thumbnail slot="start">-->
-<!--        <ion-skeleton-text [animated]="true"></ion-skeleton-text>-->
-<!--      </ion-thumbnail>-->
-<!--      <ion-label>-->
-<!--        <p>-->
-<!--          <ion-skeleton-text-->
-<!--            [animated]="true"-->
-<!--            style="width: 40%"-->
-<!--          ></ion-skeleton-text>-->
-<!--        </p>-->
-<!--        <h2>-->
-<!--          <ion-skeleton-text-->
-<!--            [animated]="true"-->
-<!--            style="width: 80%"-->
-<!--          ></ion-skeleton-text>-->
-<!--        </h2>-->
-<!--        <p class="price">-->
-<!--          <ion-skeleton-text-->
-<!--            [animated]="true"-->
-<!--            style="width: 60%"-->
-<!--          ></ion-skeleton-text>-->
-<!--        </p>-->
-<!--      </ion-label>-->
-<!--    </ion-item>-->
-<!--  </ion-list>-->
-<!--  &lt;!&ndash; End Skeleton Animasi &ndash;&gt;-->
+  <!--  &lt;!&ndash; Skeleton Animasi &ndash;&gt;-->
+  <!--  <ion-list *ngIf="!menus">-->
+  <!--    <ion-list-header>-->
+  <!--      <ion-label>MENU</ion-label>-->
+  <!--      <ion-button>See All</ion-button>-->
+  <!--    </ion-list-header>-->
+  <!--    <ion-item lines="none" *ngFor="let sk of [1,2,3,4,5]">-->
+  <!--      <ion-thumbnail slot="start">-->
+  <!--        <ion-skeleton-text [animated]="true"></ion-skeleton-text>-->
+  <!--      </ion-thumbnail>-->
+  <!--      <ion-label>-->
+  <!--        <p>-->
+  <!--          <ion-skeleton-text-->
+  <!--            [animated]="true"-->
+  <!--            style="width: 40%"-->
+  <!--          ></ion-skeleton-text>-->
+  <!--        </p>-->
+  <!--        <h2>-->
+  <!--          <ion-skeleton-text-->
+  <!--            [animated]="true"-->
+  <!--            style="width: 80%"-->
+  <!--          ></ion-skeleton-text>-->
+  <!--        </h2>-->
+  <!--        <p class="price">-->
+  <!--          <ion-skeleton-text-->
+  <!--            [animated]="true"-->
+  <!--            style="width: 60%"-->
+  <!--          ></ion-skeleton-text>-->
+  <!--        </p>-->
+  <!--      </ion-label>-->
+  <!--    </ion-item>-->
+  <!--  </ion-list>-->
+  <!--  &lt;!&ndash; End Skeleton Animasi &ndash;&gt;-->
 
   <!-- List Menu  -->
-  <ion-list *ngIf="menus">
+  <ion-list id="menu" *ngIf="menus">
     <ion-list-header>
-      <ion-label>MENU</ion-label>
+      <ion-label>MENU Favorit</ion-label>
       <ion-button>See All</ion-button>
     </ion-list-header>
-    <ion-item class="card" lines="none" *ngFor="let mn of menus">
-      <ion-thumbnail slot="start">
-        <img src="{{ mn.foto }}" alt="makanan"/>
-      </ion-thumbnail>
-      <ion-label>
-        <div class="card-content">
-        <p class="title">{{ mn.cat_nm }}</p>
-        <h2 class="title">{{ mn.mn_nm }}</h2>
-        <p class="price">Rp {{ mn.mn_harga }} ,-</p>
-        </div>
-        
-      </ion-label>
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row size="auto">
+          <ion-col *ngFor="let mn of menus" size="6">
+            <ion-card>
+              <ion-card-header>
+                <ion-thumbnail>
+                  <img src="{{mn.foto}}" />
+                </ion-thumbnail>
+                <ion-card-subtitle>{{mn.mn_cat_nm}}</ion-card-subtitle>
+                <ion-card-subtitle>{{mn.mn_nm}}</ion-card-subtitle>
+                <ion-card-title>Rp.{{mn.mn_harga}}</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
     </ion-item>
+
+
   </ion-list>
   <!-- End Menu Favorit -->
 </ion-content>
