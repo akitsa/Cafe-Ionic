@@ -22,6 +22,7 @@ export class Tab1Page {
     this.getMenu()
     this.getProfile()
   }
+ 
 
   getProfile(){
     let data = localStorage.getItem("login")

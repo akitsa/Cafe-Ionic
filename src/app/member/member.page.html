@@ -1,9 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>member</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MEMBER PROFILE</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item class="ion-margin-horizontal ion-no-padding">
+      <ion-label position="stacked">Nama</ion-label>
+      <ion-input [(ngModel)]="profile.cus_nm"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-horizontal ion-no-padding">
+      <ion-label position="stacked">Alamat</ion-label>
+      <ion-textarea [(ngModel)]="profile.cus_alamat"></ion-textarea>
+    </ion-item>
+    <ion-item class="ion-margin-horizontal ion-no-padding">
+      <ion-label position="stacked">Kota</ion-label>
+      <ion-input [(ngModel)]="profile.cus_kota"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-horizontal ion-no-padding">
+      <ion-label position="stacked">Telepon</ion-label>
+      <ion-input [(ngModel)]="profile.cus_telp"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="profile.cus_jk">
+        <ion-list-header>
+          <ion-label>Jenis Kelamin</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Laki-Laki</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Perempuan</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-button
+      class="ion-margin-horizontal"
+      (click)="saveMember()"
+      expand="full"
+      fill="solid"
+      color="warning"
+    >
+      UPDATE
+    </ion-button>
+  </ion-list>
 </ion-content>

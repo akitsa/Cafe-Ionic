@@ -1,9 +1,77 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tab4</ion-title>
+  <ion-toolbar color="warnning">
+    <ion-title>Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- Profile -->
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="assets/images/imagepeople.png" />
+    </ion-avatar>
+    <ion-label>
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+      <small>{{ user.level }}</small>
+    </ion-label>
+    <ion-chip color="danger" mode="md" outline="true">
+      <ion-label>Edit</ion-label>
+      <ion-icon name="settings"></ion-icon>
+    </ion-chip>
+  </ion-item>
+  <!-- End Profile -->
 
+  <!-- Info -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>INFO</ion-label>
+    </ion-list-header>
+    <ion-item (click)="goTo('member')">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label>Member Profile</ion-label>
+    </ion-item>
+    <ion-item (click)="goTo('card')">
+      <ion-icon name="card" slot="start"></ion-icon>
+      <ion-label>Member Card</ion-label>
+    </ion-item>
+    <ion-item (click)="goTo('tabs/tab3')">
+      <ion-icon name="cart" slot="start"></ion-icon>
+      <ion-label>Transaction</ion-label>
+    </ion-item>
+    <ion-item (click)="goTo('transaksi')">
+      <ion-icon name="diamond-outline" slot="start"></ion-icon>
+      <ion-label>Poin</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- End Info -->
+
+  <!-- Help -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>HELP</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="chatbox-ellipses" slot="start"></ion-icon>
+      <ion-label>Chat</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="help-circle" slot="start"></ion-icon>
+      <ion-label>FAQ</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="shield-checkmark" slot="start"></ion-icon>
+      <ion-label>Privacy Policy</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- End Help -->
+
+  <!-- Log Out -->
+  <ion-list>
+    <ion-item (click)="logOut()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      <ion-label>Logout</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- End Log Out -->
 </ion-content>

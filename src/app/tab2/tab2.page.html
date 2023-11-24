@@ -44,16 +44,23 @@
           <ion-label>MENU</ion-label>
           <ion-button>See All</ion-button>
         </ion-list-header>
-        <ion-item lines="none" *ngFor="let mn of menus | filter:search" (click)="goDetailMenu(mn)">
-          <ion-thumbnail slot="start">
-            <img src="{{ mn.foto }}" alt="makanan"/>
-          </ion-thumbnail>
-          <ion-label>
-            <p>{{ mn.cat_nm }}</p>
-            <h2>{{ mn.mn_nm }}</h2>
-    
-            <p class="price">Rp {{ mn.mn_harga }} ,-</p>
-          </ion-label>
+        <ion-item class="card" lines="none" >
+          <ion-grid>
+            <ion-row size="auto">
+              <ion-col *ngFor="let mn of menus | filter:search" (click)="goDetailMenu(mn)" size="6">
+                <ion-card>
+                  <ion-card-header>
+                    <ion-thumbnail>
+                      <img src="{{mn.foto}}" />
+                    </ion-thumbnail>
+                    <ion-card-subtitle>{{mn.mn_cat_nm}}</ion-card-subtitle>
+                    <ion-card-subtitle>{{mn.mn_nm}}</ion-card-subtitle>
+                    <ion-card-title>Rp.{{mn.mn_harga}}</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </ion-item>
       </ion-list>
   <!-- End Menu Favorit -->

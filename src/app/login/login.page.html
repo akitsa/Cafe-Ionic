@@ -1,23 +1,40 @@
-
-
 <ion-content>
   <div id="login">
     <div class="logo">
-      <img src="assets/images/logo1.png" alt="">
+      <img src="assets/images/sadboi.png" alt="" />
     </div>
+    <h3>Please Login in here</h3>
     <div class="form">
       <ion-item lines="none">
-        <ion-input [(ngModel)]="login.email" type="text" placeholder="email" ></ion-input>
+        <ion-input
+          [(ngModel)]="login.email"
+          type="text"
+          placeholder="email"
+        ></ion-input>
       </ion-item>
       <ion-item lines="none">
-        <ion-input [(ngModel)]="login.password" type="password" placeholder="password" ></ion-input>
+        <ion-input
+          [(ngModel)]="login.password"
+          type="password"
+          placeholder="password"
+        ></ion-input>
       </ion-item>
-      <ion-button (click)="goLogin()" expand="block" shape="round" color="warning">
+      <ion-button
+        (click)="goLogin()"
+        expand="block"
+        shape="round"
+        color="danger"
+      >
         Sign In
       </ion-button>
-      <p>- Or - </p>
-      <ion-button (click)="goRegistrasi()" expand="block" shape="round" color="medium">
-        Sign Up 
+      <p>- Or -</p>
+      <ion-button
+        (click)="goRegistrasi()"
+        expand="block"
+        shape="round"
+        color="dark"
+      >
+        Sign Up
       </ion-button>
     </div>
   </div>

@@ -1,25 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      History Transaksi
-    </ion-title>
+    <ion-title> History Transaksi </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-searchbar id="search" class="ion-no-padding" placeholder="Search History" showCancelButton="focus"></ion-searchbar>
+  <ion-searchbar
+    id="search"
+    class="ion-no-padding"
+    show-cancel-button="focus"
+    placeholder="Search History"
+    [(ngModel)]="search"
+  ></ion-searchbar>
   <ion-list>
-    <!-- menampilkan ion item -->
-    <ion-item lines="none" *ngFor="let t of trans | filter:search ">
+    <!-- Menampilkan ion item dari variable menu -->
+    <ion-item lines="none" *ngFor="let t of trans | filter:search">
       <ion-label>
-        <h2>TR#{{ t.id}}- meja {{ t.trans_mj_no }}</h2>
+        <h2>TR#{{ t.id }} - MEJA: {{ t.trans_mj_no }}</h2>
         <p>{{ t.trans_nota }}</p>
-        <p>{{ t.trans_tgl  }}</p>
+        <p>{{ t.trans_tgl }}</p>
       </ion-label>
       <ion-label slot="end">
-        <h4>Rp {{ t.trans_gtotal |number  }}</h4>
+        <h4>Rp {{ t.trans_gtotal | number }}</h4>
       </ion-label>
     </ion-item>
   </ion-list>
-  
 </ion-content>

@@ -2,32 +2,40 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
-    </ion-buttons>  
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <!-- toolbar -->
-    <ion-card class="thumb ion-no-margin">
-      <ion-card-content>
-        <img src="{{ 'menus.foto' }}" alt="">
-        <ion-chip [color]="menus.mn_stok=='A'?'succes':'danger'"mode="ios"outline="true">
-         <ion-icon [name]="menus.mn_stok=='A'? 'checkmark-circle' : 'close-circle'"></ion-icon>
-          <ion-label>
-            {{ menus.mn_stok=="A" ? "Available" : "Not Available"  }}
-          </ion-label>
-        </ion-chip>
-      </ion-card-content>
-    </ion-card>
-    <!-- thumb end -->
-    <!-- deskripsi -->
-      <ion-card class="desc">
-        <ion-card-content>
-          <ion-badge color="warning" mode="ios">{{ menus.cat_nm }}</ion-badge>
-          <h1>{{ menus.mn_nm }}</h1>
-          <h3>Rp {{ menus.mn_harga | number  }},-</h3>
-          <p>{{ menus.mn_desc }}</p>
-        </ion-card-content>
-      </ion-card>
-    <!-- end deskripsi -->
+  <!-- toolbar -->
+  <ion-card class="thumb ion-no-margin">
+    <ion-card-content>
+      <img src="{{ 'menus.foto' }}" alt="" />
+      <ion-chip
+        [color]="menus.mn_stok=='A'?'success':'danger'"
+        mode="ios"
+        outline="true"
+      >
+        <ion-icon
+          [name]="menus.mn_stok=='A'? 'checkmark-circle' : 'close-circle'"
+        ></ion-icon>
+        <ion-label>
+          {{ menus.mn_stok=="A" ? "Available" : "Not Available" }}
+        </ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <!-- thumb end -->
+  <!-- deskripsi -->
+  <ion-card class="desc">
+    <ion-card-content>
+      <ion-badge color="warning" mode="ios">{{ menus.cat_nm }}</ion-badge>
+      <img src="{{menus.foto}}" alt="" />
+      <h1>{{ menus.mn_nm }}</h1>
+      <h3>Rp {{ menus.mn_harga | number }},-</h3>
+      <p>{{ menus.mn_desc }}</p>
+      <ion-icon class="cart-icon" name="cart-outline"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+  <!-- end deskripsi -->
 </ion-content>
